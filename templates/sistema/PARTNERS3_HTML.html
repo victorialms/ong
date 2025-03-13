@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceiros</title>
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='sistema/PARTNERS3_CSS.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Suez One'
+      rel='stylesheet'>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <section class="custom-header">
+      <img src="{{ url_for('static', filename='home/LogoAtual.png') }}" alt="Logo" class="header-logo">
+      <nav class="header-nav">
+        <a href="{{ url_for('index')}}" class="nav-link">INÍCIO</a>
+        <a href="#" class="nav-link">QUEM SOMOS</a>
+        <a href="#" class="nav-link">NOSSOS PROJETOS</a>
+        <a href="{{ url_for('transparency') }}" class="nav-link">TRANSPARÊNCIA</a>
+      </nav>
+      <div class="header-buttons">
+        <a href="{{ url_for('pix') }}" class="header-btn">COMO AJUDAR</a>
+        <a href="{{ url_for('sistema') }}" class="header-btn">ACESSO INTERNO</a>
+      </div>
+    </section>
+
+    <div class="filter-container">
+      <label for="search-name">PESQUISAR PELO NOME</label>
+      <form class='form-filter-button' method="GET" action="{{ url_for('exibir_parceiro') }}">
+        <input type="text" id="search-name" name="search_name" placeholder="Digite o nome do parceiro" value="{{ request.args.get('search_name', '') }}">
+        <button class="filter-button" type="submit">Filtrar</button>
+      </form>
+      <a href="{{ url_for('parceiros') }}" class="filter-button2">Voltar</a>
+    </div>    
+
+    <!--tabela para o banco-->
+
+    <table border="1" cellpadding="10" cellspacing="0"
+      style="width: 100%; margin-top: 80px;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Data</th>
+          <th>Descrição</th>
+          <th>Ações</th> <!-- Coluna para os botões de remover e editar -->
+        </tr>
+      </thead>
+      <tbody id="data-table">
+        {% for parceiro in parceiros %}
+        <tr>
+          <td>{{ parceiro.id_parceiro }}</td>
+          <td>{{ parceiro.nome_parceiro }}</td>
+          <td>{{ parceiro.data_parceiro }}</td>
+          <td>{{ parceiro.descricao_parceiro }}</td>
+          <td>
+            <form
+              action="{{ url_for('editar_parceiro', id_parceiro=parceiro.id_parceiro) }}"
+              method="get" style="display:inline;">
+              <button type="submit">Editar</button>
+            </form>
+
+            <form
+              action="{{ url_for('excluir_parceiro', id_parceiro=parceiro.id_parceiro) }}"
+              method="POST" style="display:inline;">
+              <button type="submit"
+                onclick="return confirm('Tem certeza que deseja excluir este parceiro?')">Excluir</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='pix/ONGPIX_JS.js')}}"></script>
+    <script
+      src="{{ url_for('static', filename='sistema/SYSTEM_JS.js')}}"></script>
+
+  </body>
+</html>

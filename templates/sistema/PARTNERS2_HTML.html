@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceiros</title>
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='sistema/PARTNERS2_CSS.css')}}">
+    <link href='https://fonts.googleapis.com/css?family=Suez One'
+      rel='stylesheet'>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <section class="custom-header">
+      <img src="{{ url_for('static', filename='home/LogoAtual.png') }}" alt="Logo" class="header-logo">
+      <nav class="header-nav">
+        <a href="{{ url_for('index')}}" class="nav-link">INÍCIO</a>
+        <a href="#" class="nav-link">QUEM SOMOS</a>
+        <a href="#" class="nav-link">NOSSOS PROJETOS</a>
+        <a href="{{ url_for('transparency') }}" class="nav-link">TRANSPARÊNCIA</a>
+      </nav>
+      <div class="header-buttons">
+        <a href="{{ url_for('pix') }}" class="header-btn">COMO AJUDAR</a>
+        <a href="{{ url_for('sistema') }}" class="header-btn">ACESSO INTERNO</a>
+      </div>
+    </section>
+
+    <!-- 
+  expenses -->
+
+    <div class="content">
+      <div class="form-container">
+        <h1>Cadastrar Parceiros</h1>
+        <form method="POST" action="{{url_for('cadastrar_parceiro') }}">
+          <div class="form-group">
+            <label for="nome_parceiro">Nome:</label>
+            <input type="text" id="nome_parceiro" name=nome_parceiro
+              placeholder="Digite seu nome" required>
+          </div>
+          <div class="form-group">
+            <label for="data_parceiro">Data:</label>
+            <input type="date" id="data_parceiro" name=data_parceiro required>
+          </div>
+          <div class="form-group">
+            <label for="descricao_parceiro">Descrição:</label>
+            <textarea id="descricao_parceiro" name=descricao_parceiro
+              placeholder="Descreva a parceria"></textarea>
+          </div>
+          <div class="btn-container">
+            <button type="submit" class="btn btn-primary">CADASTRAR</button>
+            <a href="{{ url_for('parceiros') }}" class="btn btn-secondary">VOLTAR</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='pix/ONGPIX_JS.js')}}"></script>
+    <script
+      src="{{ url_for('static', filename='sistema/SYSTEM_JS.js')}}"></script>
+
+  </body>
+</html>

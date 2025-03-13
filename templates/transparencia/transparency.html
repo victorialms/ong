@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparência</title>
+  <link href="{{ url_for('static', filename='home/style.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ url_for('static', filename='transparencia/transparency.css') }}" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Suez+One' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- Header -->
+  <section class="custom-header">
+    <a  href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='home/LogoAtual.png') }}" alt="Logo" class="header-logo">
+    </a><nav class="header-nav">
+      <a href="{{ url_for('index') }}" class="nav-link">INÍCIO</a>
+      <a href="{{ url_for('index') }}#quemsomos" class="nav-link">QUEM SOMOS</a>
+      <a href="{{ url_for('index') }}#areatuacao" class="nav-link">NOSSOS PROJETOS</a>
+      <a href="{{ url_for('transparency') }}" class="nav-link">TRANSPARÊNCIA</a>
+    </nav>
+    <div class="header-buttons">
+      <a href="{{ url_for('pix') }}" class="header-btn">COMO AJUDAR</a>
+      <a href="{{ url_for('sistema') }}" class="header-btn">ACESSO INTERNO</a>
+    </div>
+  </section>
+
+  <div class="espaco"></div>
+
+  <!-- Container Principal -->
+  <div id="transparencyContainer">
+    <!-- Coluna Esquerda (Artigos e Navegação) -->
+    <div class="leftColumn">
+      <div class="transparencyNavbar roundedCorners">
+        <nav class="transparencyNavbar nav">
+          <ul>
+            <li><a href="#" class="sidebar-nav-link" data-section="documentos" onclick="showContent('documentos')">Documentos</a></li>
+            <li><a href="#" class="sidebar-nav-link" data-section="fotos-videos" onclick="showContent('fotos-videos')">Fotos e Vídeos</a></li>
+            <li><a href="#" class="sidebar-nav-link" data-section="eventos" onclick="showContent('eventos')">Eventos</a></li>
+          </ul>
+        </nav>
+        
+      </div>
+
+      <!-- Conteúdo dinâmico dos artigos -->
+      <div id="documentos-articles" class="section-articles" style="display: none;">
+        <div class="articlesContainer">
+          <div class="transparencyArticles">
+            <img src="{{ url_for('static', filename='transparencia/relatorio.png') }}" class="thumbnail" alt="Documento">
+            <div class="transparencyContent">
+              <h1 class="articleTitle">Documento Vazio</h1>
+              <p class="articleDescription">Em Breve.</p>
+              <input class="learnMoreButton" type="button" value="Saiba mais">
+            </div>
+          </div>
+        </div>
+        <div class="articlesContainer">
+          <div class="transparencyArticles">
+            <img src="{{ url_for('static', filename='transparencia/relatorio.png') }}" class="thumbnail" alt="Documento">
+            <div class="transparencyContent">
+              <h1 class="articleTitle">Documento Vazio</h1>
+              <p class="articleDescription">Em Breve.</p>
+              <input class="learnMoreButton" type="button" value="Saiba mais">
+            </div>
+          </div>
+        </div>
+        <div class="articlesContainer">
+          <div class="transparencyArticles">
+            <img class="thumbnail" src="{{ url_for('static', filename='transparencia/relatorio.png') }}" alt="Documento">
+            <div class="transparencyContent">
+              <h1 class="articleTitle">Documento Vazio</h1>
+              <p class="articleDescription">Em breve.</p>
+              <input class="learnMoreButton" type="button" value="Saiba mais">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="fotos-videos-articles" class="section-articles" style="display: none;">
+        <div class="photo-gallery">
+          <div class="photo-card">
+            <img src="{{ url_for('static', filename='transparencia/foto1.png') }}" alt="Foto 1" class="photo-image">
+          </div>
+          <div class="photo-card">
+            <img src="{{ url_for('static', filename='transparencia/foto2.png') }}" alt="Foto 2" class="photo-image">
+          </div>
+          <div class="photo-card">
+            <img src="{{ url_for('static', filename='transparencia/foto3.png') }}" alt="Foto 3" class="photo-image">
+          </div>
+          <div class="photo-card">
+            <img src="{{ url_for('static', filename='transparencia/foto4.png') }}" alt="Foto 4" class="photo-image">
+          </div>
+          <div class="photo-card">
+            <img src="{{ url_for('static', filename='transparencia/foto5.png') }}" alt="Foto 5" class="photo-image">
+          </div>
+          <div class="photo-card">
+            <img src="{{ url_for('static', filename='transparencia/foto6.png') }}" alt="Foto 6" class="photo-image">
+          </div>
+        </div>
+      </div>
+
+      <div id="eventos-articles" class="section-articles" style="display: block;">
+        <div class="articlesContainer">
+          <div class="transparencyArticles">
+            <img class="thumbnail" src="{{ url_for('static', filename='transparencia/divinavo.png') }}" alt="Imagem capa do artigo.">
+            <div class="transparencyContent">
+              <h1 class="articleTitle">Casa Geriátrica Divinavó</h1>
+              <p class="articleDescription">Cuidando com carinho dos idosos em Divinavó.</p>
+              <input id="learnMoreDivinavo" class="learnMoreButton" type="button" value="Saiba mais">
+            </div>
+          </div>
+        </div>
+        <div class="articlesContainer">
+          <div class="transparencyArticles">
+            <img class="thumbnail" src="{{ url_for('static', filename='transparencia/quentinha.png') }}" alt="Imagem capa do artigo.">
+            <div class="transparencyContent">
+              <h1 class="articleTitle">Distribuição de Quentinhas</h1>
+              <p class="articleDescription">Distribuição solidária de quentinhas para quem precisa.</p>
+              <input id="learnMoreQuentinha" class="learnMoreButton" type="button" value="Saiba mais">
+            </div>
+          </div>
+        </div>
+        <div class="articlesContainer">
+          <div class="transparencyArticles">
+            <img class="thumbnail" src="{{ url_for('static', filename='transparencia/semanacultural.png') }}" alt="Imagem capa do artigo.">
+            <div class="transparencyContent">
+              <h1 class="articleTitle">Semana Cultural</h1>
+              <p class="articleDescription">Celebração da cultura, união e aprendizado para todos.</p>
+              <input class="learnMoreButton" id="learnMoreCultura" type="button" value="Saiba mais">
+            </div>
+          </div>
+        </div>
+        <div class="articlesContainer">
+          <div class="transparencyArticles">
+            <img class="thumbnail" src="{{ url_for('static', filename='transparencia/hemorio.png') }}" alt="Imagem capa do artigo.">
+            <div class="transparencyContent">
+              <h1 class="articleTitle">Hemório</h1>
+              <p class="articleDescription">Doação de sangue Hemório: solidariedade que salva vidas.</p>
+              <input class="learnMoreButton" id="learnMoreHemorio" type="button" value="Saiba mais">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coluna Direita (Conteúdo das Seções) -->
+    <div class="rightColumn">
+      <div id="documentos" class="section-content" style="display: none;">
+        <h1>Informações</h1>
+        <p>Conteúdo de documentos...</p>
+      </div>
+      <div id="fotos-videos" class="section-content" style="display: none;">
+          <h1>Fotos e Vídeos</h1>
+          <div class="video-container" style="margin-top: 20px;">
+            <video width="100%" controls class="custom-video" controls preload="auto" autoplay muted playsinline preload="auto">
+              <source src="{{ url_for('static', filename='transparencia/video.mp4') }}" type="video/mp4">
+            </video>
+          </div>
+      </div>
+      <div id="eventos" class="section-content" style="display: block;">
+        <h1>Informações</h1>
+        <img src="{{ url_for('static', filename='transparencia/eventoscapa.png') }}" alt="Capa do evento" class="event-cover-image">
+        <p>Venha Saber Mais Sobre Nossos Eventos!<br>Os eventos da ONG Semeando Alegria são oportunidades incríveis para unir a comunidade em torno de causas importantes e promover ações que fazem a diferença. Cada evento é planejado com dedicação e carinho, visando impactar positivamente a vida das pessoas e fortalecer a solidariedade. Ao participar, você tem a chance de contribuir para projetos que ajudam idosos, crianças e famílias em situação de vulnerabilidade. Nossos eventos variam desde campanhas de arrecadação de alimentos, bazares beneficentes, até encontros culturais e oficinas educativas. Além de ajudar o próximo, eles são uma ótima oportunidade para conhecer pessoas, trocar experiências e aprender mais sobre temas importantes como cidadania, sustentabilidade e inclusão social.</p>
+      </div>
+      <div id="divinavo-info" class="section-content" style="display: none;">
+        <h1>Casa Geriátrica Divinavó</h1>
+        <img src="{{ url_for('static', filename='transparencia/fotodivinavo.png') }}" alt="Casa Geriátrica Divinavó" class="event-cover-image">
+        <p>A Casa Geriátrica Divinavó dedica-se ao cuidado carinhoso e integral dos idosos, criando um ambiente acolhedor onde cada residente é valorizado, respeitado e integrado à comunidade. Promovemos atividades recreativas e interativas que estimulam a socialização, o bem-estar e a convivência saudável. Nossa equipe, composta por profissionais qualificados, se empenha em oferecer conforto e segurança, garantindo que todos os idosos vivam com qualidade e dignidade.
+
+          Além disso, acreditamos na importância da interação com a comunidade e na convivência intergeracional. Organizamos eventos e visitas frequentes, proporcionando momentos de alegria e fortalecimento de vínculos entre os idosos e a sociedade. Cada dia na Divinavó é uma oportunidade de proporcionar felicidade e transformar vidas com carinho e atenção.</p>
+      </div>
+      <div id="quentinha-info" class="section-content" style="display: none;">
+        <h1>Distribuição de Quentinhas</h1>
+        <img src="{{ url_for('static', filename='transparencia/fotoquentinha.png') }}" alt="Distribuição de quentinhas" class="event-cover-image">
+        <p>A Distribuição de Quentinhas é uma ação solidária essencial realizada pela ONG Semeando Alegria, com o objetivo de oferecer refeições nutritivas para aqueles que mais precisam. Nossas equipes e voluntários se unem com o coração aberto, distribuindo quentinhas e proporcionando um pouco de conforto e carinho a famílias e indivíduos em situação de vulnerabilidade. Cada doação é um gesto de amor e esperança, fortalecendo os laços comunitários e mostrando que, juntos, podemos fazer a diferença. Venha conhecer mais sobre esse projeto e descubra como você pode contribuir para essa causa tão importante.</p>
+      </div>
+      <div id="cultura-info" class="section-content" style="display: none;">
+        <h1>Semana Cultural</h1>
+        <img src="{{ url_for('static', filename='transparencia/fotocultura.jpeg') }}" alt="Semana Cultural" class="event-cover-image">
+        <p>A Semana Cultural organizada pela ONG Semeando Alegria é um momento especial para reunir a comunidade em torno de atividades que celebram a arte, a cultura e o aprendizado. Este evento é uma oportunidade para crianças, jovens, adultos e idosos participarem de apresentações de música, dança, teatro e exposições de arte, promovendo o intercâmbio cultural e o fortalecimento de laços comunitários. Além das apresentações, são realizadas oficinas educativas onde os participantes podem aprender novas habilidades, explorar sua criatividade e ampliar seus conhecimentos sobre temas diversos. A Semana Cultural visa não apenas o entretenimento, mas também a valorização da diversidade cultural e o estímulo à convivência harmoniosa, contribuindo para o bem-estar e a união de todos os envolvidos.</p>
+    </div>
+    <div id="hemorio-info" class="section-content" style="display: none;">
+      <h1>Hemório</h1>
+      <img src="{{ url_for('static', filename='transparencia/fotohemorio.png') }}" alt="Doação de Sangue Hemório" class="event-cover-image">
+      <p>O evento Hemório representa um esforço coletivo para incentivar a doação de sangue e conscientizar sobre a importância desse ato de solidariedade. Em colaboração com voluntários e profissionais de saúde, organizamos atividades que não apenas facilitam o processo de doação, mas também educam o público sobre a necessidade constante de bancos de sangue abastecidos para salvar vidas. A participação da comunidade é fundamental para garantir que mais vidas sejam salvas através desse gesto nobre e altruísta.</p>
+    </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div id="footer_content">
+      <div id="footer_contacts">
+        <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='home/LogoAtual.png') }}" id="logo">
+        </a><p>Nossas redes sociais</p>
+  
+        <div id="footer_social_media">
+          <a href="https://www.instagram.com/ongsemeandoalegria/" target="_blank" class="footer-link" id="instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+  
+          <a href="https://www.facebook.com/projetosemeandoalegria/?locale=pt_BR" target="_blank" class="footer-link" id="facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+  
+          <a href="#" class="footer-link" id="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+  
+      <ul class="footer-list">
+        <li>
+          <h3>Colabore</h3>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Doe qualquer valor </a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Apadrinhe nossas crianças</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Apadrinhe a ONG</a>
+        </li>
+      </ul>
+  
+      <ul class="footer-list">
+        <li>
+          <h3>Contato</h3>
+        </li>
+        <li>
+          <a href="#" class="footer-link">contato@semeandoalegria.org.br</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">(21)9 XXXX-XXXX</a>
+        </li>
+      </ul>
+  
+      <div id="footer_subscribe">
+        <h3>Inscreva-se</h3>
+  
+        <p>
+          Digite seu e-mail e fique ligado<br>
+          sobre novas ações!
+        </p>
+  
+        <div id="input_group">
+          <input type="email" id="email" placeholder="Digite seu e-mail" required>
+          <button onclick="inscreverEmail()">
+            <i class="fa-regular fa-envelope"></i>
+          </button>
+        </div>
+        
+      </div>
+    </div> 
+  
+    <div id="footer_copyright">
+      &#169
+      2024 all rights reserved
+    </div>
+  </footer>
+
+  <!-- Script separado -->
+  <script src="{{ url_for('static', filename='transparencia/transparency.js') }}"></script>
+</body>
+
+</html>

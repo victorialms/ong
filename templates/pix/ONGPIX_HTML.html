@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doações</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='pix/ONGPIX_CSS.css')}}">
+  <link href='https://fonts.googleapis.com/css?family=Suez One' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- Header -->
+  <section class="custom-header">
+    <a  href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='home/LogoAtual.png') }}" alt="Logo" class="header-logo">
+    </a><nav class="header-nav">
+      <a href="{{ url_for('index') }}" class="nav-link">INÍCIO</a>
+      <a href="{{ url_for('index') }}#quemsomos" class="nav-link">QUEM SOMOS</a>
+      <a href="{{ url_for('index') }}#areatuacao" class="nav-link">NOSSOS PROJETOS</a>
+      <a href="{{ url_for('transparency') }}" class="nav-link">TRANSPARÊNCIA</a>
+    </nav>
+    <div class="header-buttons">
+      <a href="{{url_for('pix') }}" class="header-btn">COMO AJUDAR</a>
+      <a href="{{ url_for('sistema') }}" class="header-btn">ACESSO INTERNO</a>
+    </div>
+  </section>
+
+  <!-- Main Donation Section -->
+  <div class="main-donation-section">
+    <div class="image-slider">
+      <div class="circle-buttons">
+          <button class="circle" onclick="changeImage(0)"></button>
+          <button class="circle" onclick="changeImage(1)"></button>
+          <button class="circle" onclick="changeImage(2)"></button>
+      </div>
+      <img id="image" src="{{ url_for('static', filename='pix/ONG_IMG/c_kid1.png') }}" alt="Imagem">
+    </div>
+
+    <div class="content">
+      <h1>Transforme vidas com sua doação!</h1>
+      <p>Juntos, podemos garantir um futuro melhor para quem precisa.</p>
+      <div class="donation-options">
+          <!-- Botões com diferentes valores -->
+          <button onclick="setDonationValue(5)">
+              <img src="{{ url_for('static', filename='pix/ONG_IMG/gift.png') }}" alt="Ícone Presente">
+              <span class="number">R$ 5,00</span>
+              <span id="arrow">&rarr;</span>
+          </button>
+          <button onclick="setDonationValue(10)">
+              <img src="{{ url_for('static', filename='pix/ONG_IMG/gift.png') }}" alt="Ícone Presente">
+              <span class="number">R$ 10,00</span>
+              <span id="arrow">&rarr;</span>
+          </button>
+          <button onclick="setDonationValue(20)">
+              <img src="{{ url_for('static', filename='pix/ONG_IMG/gift.png') }}" alt="Ícone Presente">
+              <span class="number">R$ 20,00</span>
+              <span id="arrow">&rarr;</span>
+          </button>
+          <!-- Botão "Outro valor" -->
+          <button onclick="setDonationValue('Outro Valor')" class="other-option">
+              <span class="number">Outro valor</span>
+              <span id="arrow">&rarr;</span>
+          </button>
+      </div>
+    </div>
+    
+    </div>
+
+<!-- Cloud 2 -->
+<div class="cloud2">
+  <img src="{{ url_for('static', filename='/pix/ONG_IMG/lastoneeeee.png') }}">
+</div>
+
+<!-- Seção azul (monthly donation) logo abaixo -->
+<div class="monthly-donation">
+  <span class="monthly-things">
+  <h2>Deseja nos ajudar todo mês?</h2>
+  <p>Contribua mensalmente com a ONG através do pix programado</p>
+  <small>*cancele a qualquer momento no app do seu banco</small>
+
+  <div class="monthly-buttons">
+    <button onclick="setDonationValue(5)">R$ 5,00</button>
+    <button onclick="setDonationValue(10)">R$ 10,00</button>
+    <button onclick="setDonationValue(20)">R$ 20,00</button>
+  </div>
+</div>
+
+<!-- Cloud -->
+<div class="cloud">
+    <img src="{{ url_for('static', filename='/pix/ONG_IMG/lastoneeeee.png') }}">
+  </div>
+
+<!-- Seção de Apadrinhamento -->
+<div class="sponsorship-section-wrapper">
+  <img id="image2" src="{{ url_for('static', filename='/pix/ONG_IMG/kids-playing.avif') }}" alt="Imagem Apadrinhamento" class="sponsorship-image-outside">
+  <div class="sponsorship-section">
+      <div class="sponsorship-text">
+          <h2>Apadrinhe uma criança!</h2>
+          <p>Seja um padrinho ou madrinha! Com R$30, você doa um brinquedo, com R$20, um lanche, ou com R$50, ambos. Escolha entre entregar pessoalmente ou enviar o valor. Cada criança tem um único padrinho, garantindo que todos recebam igualmente. Faça parte dessa mudança!</p>
+          <button class="sponsorship-button" onclick="window.open('https://www.instagram.com/p/Cw2gvxexFX6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', '_blank')">Quero apadrinhar</button>
+      </div>
+  </div>
+</div>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <div id="footer_content">
+        <div id="footer_contacts">
+          <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='home/LogoAtual.png') }}" id="logo">
+          </a><p>Nossas redes sociais</p>
+    
+          <div id="footer_social_media">
+            <a href="https://www.instagram.com/ongsemeandoalegria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="footer-link" id="instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+    
+            <a href="#" class="footer-link" id="facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+    
+            <a href="#" class="footer-link" id="whatsapp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+    
+        <ul class="footer-list">
+          <li>
+            <h3>Colabore</h3>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Doe qualquer valor </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Apadrinhe nossas crianças</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Apadrinhe a ONG</a>
+          </li>
+        </ul>
+    
+        <ul class="footer-list">
+          <li>
+            <h3>Contato</h3>
+          </li>
+          <li>
+            <a href="#" class="footer-link">contato@semeandoalegria.org.br</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">(21)9 XXXX-XXXX</a>
+          </li>
+        </ul>
+    
+        <div id="footer_subscribe">
+          <h3>Inscreva-se</h3>
+    
+          <p>
+            Digite seu e-mail e fique ligado<br>
+            sobre novas ações!
+          </p>
+    
+          <div id="input_group">
+            <input type="email" id="email" placeholder="Digite seu e-mail" required>
+            <button onclick="inscreverEmail()">
+              <i class="fa-regular fa-envelope"></i>
+            </button>
+          </div>
+        </div>
+      </div> 
+    
+      <div id="footer_copyright">
+        &#169
+        2024 all rights reserved
+      </div>
+    </footer>
+
+  <script src="{{ url_for('static', filename='pix/ONGPIX_JS.js')}}"></script>
+  
+</body>
+</html>

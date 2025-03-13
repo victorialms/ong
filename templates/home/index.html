@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semeando Alegria</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='home/style.css') }}">
+  <link href='https://fonts.googleapis.com/css?family=Suez One' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- Header -->
+  <section class="custom-header">
+    <a  href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='home/LogoAtual.png') }}" alt="Logo" class="header-logo">
+    </a><nav class="header-nav">
+      <a href="{{ url_for('index') }}" class="nav-link">INÍCIO</a>
+      <a href="{{ url_for('index') }}#quemsomos" class="nav-link">QUEM SOMOS</a>
+      <a href="{{ url_for('index') }}#areatuacao" class="nav-link">NOSSOS PROJETOS</a>
+      <a href="{{ url_for('transparency') }}" class="nav-link">TRANSPARÊNCIA</a>
+    </nav>
+    <div class="header-buttons">
+      <a href="{{ url_for('pix') }}" class="header-btn">COMO AJUDAR</a>
+      <a href="{{ url_for('sistema') }}" class="header-btn">ACESSO INTERNO</a>
+    </div>
+  </section>
+
+<!-- CARROSSEL PRINCIPAL -->
+
+<div class="slider"> 
+    <div class="slides">
+        <!-- radio buttons -->
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+
+        <!-- Slide imagens -->
+         <div class="slide first">
+            <img src="{{ url_for('static', filename='home/img_c1.png') }}" alt="imagem1"/> 
+         </div>
+
+         <div class="slide">
+            <img src="{{ url_for('static', filename='home/img_c2.png') }}" alt="imagem2"/> 
+         </div>
+
+         <div class="slide">
+            <img src="{{ url_for('static', filename='home/img_c3.png') }}" alt="imagem3"/>
+         </div>
+
+         <div class="slide">
+            <img src="{{ url_for('static', filename='home/img_c4.png') }}" alt="imagem4"/> 
+         </div>
+
+         <!-- navigation auto -->
+          <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+          </div>
+
+    </div>
+
+    <div class="manual-navigation">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+    </div>
+</div>
+
+  <!-- sol e nuvens -->
+
+  <div  class="nuvens-sol">
+    <img id="quemsomos" src="{{ url_for('static', filename='home/sol.png') }}" alt="Logo Sol" class="logoSol">
+  </div>
+ 
+  <div class="sol">
+    <div class="foto1">
+      <div class="texto">
+        <p>Semeando Alegria é uma ONG que atua nos municípios de Niterói, Rio de Janeiro e São Gonçalo, através de trabalhos voluntários envolvendo grupos de minoria do Estado do Rio de Janeiro.</p>
+        <p>Procuramos propagar o amor de todas as formas e fazer com que as pessoas passem a olhar para o outro de igual para igual. Acreditamos que pequenas ações rotineiras transformam vidas e que, quando o ser humano transforma vidas, ele se transforma.</p>
+        <p>Atualmente com três áreas de atuação - infância e adolescência, terceira idade e pessoas em situação de rua - buscamos, por meio de ações solidárias, mudar comportamentos, oferecer novas oportunidades para pessoas de baixa renda e semear a alegria.</p>
+      </div>
+      <img src="{{ url_for('static', filename='home/quemsomos1.jpeg') }}" class="imagem-quemSomos">
+    </div>
+  </div>
+  <div class="espaco"></div>
+  <!-- Cloud 2 -->
+<div class="cloud2">
+    <img src="{{ url_for('static', filename='pix/ONG_IMG/lastoneeeee.png') }}">
+  </div>
+
+<!-- doe aqui --> 
+
+<div class="doacao-container">
+    <div class="doacao-content">
+        <h2>Quer nos ajudar nessa missão?</h2>
+        <a href="{{ url_for('pix') }}">
+        <button class="doar-btn">Doe aqui!</button>
+        </a>
+    </div>
+</div>
+
+<!-- Cloud -->
+<div class="cloud">
+    <img src="{{ url_for('static', filename='pix/ONG_IMG/lastoneeeee.png') }}">
+  </div>
+
+  <div class="espaco2"></div>
+
+  <!-- Primeiro código (Áreas de Atuação) -->
+  <div class="container-atuacao">
+    <div class="title">
+        <h1>Conheça nossas áreas de atuação!</h1>
+    </div>
+    <div id="areatuacao" class="cards-atuacao">
+        <div class="card-atuacao">
+            <h2>Infância e Adolescência</h2>
+            <img src="{{ url_for('static', filename='home/infancia.png') }}" alt="Infância e Adolescência">
+            <p><br>Oferecer amparo a crianças e adolescentes que se encontram em situação de risco social e pessoal e/ou se encontram em desigualdade social, através de atividades que promovam o bem-estar, a melhora da autoestima e ajudem no desenvolvimento psicológico e afetivo sadio. Utilizamos o lúdico como ferramenta recreativa, terapêutica e educacional. Crianças e adolescentes se tornam protagonistas, com liberdade e autonomia para explorarem os materiais e espaços, muitas vezes novos, e se expressarem da forma que quiserem. Fazemos do brincar um elo entre o sujeito com sua realidade interior e do sujeito com a realidade externa. Com essas novas oportunidades muitas vezes exploramos a cultura do país e conseguimos difundir conhecimentos associados à melhora da educação, impactando de forma positiva a vida de crianças e adolescentes.</p>
+        </div>
+        <div class="card-atuacao">
+            <h2>Terceira Idade</h2>
+            <img src="{{ url_for('static', filename='home/velhos.jpeg') }}" alt="Terceira Idade">
+            <p><br>Também utilizamos o lúdico como dispositivo para nossas intervenções. Buscamos entender a complexidade do processo de envelhecimento, considerando os múltiplos fatores que interferem na qualidade de vida - físicos, psicológicos, sociais e ambientais. Lidamos com idosos que estão em algum abrigo e, normalmente, enfrentam alguma doença. As atividades são adaptadas para conseguirmos explorar o potencial de cada um, ajudando-os no resgate da sua identidade e mantendo a integração social. Conhecendo o território em que estão inseridos e a individualidade de cada um, conseguimos oferecer alternativas prazerosas, promover saúde, ajudar na prevenção de agravos e superar desafios.</p>
+        </div>
+        <div class="card-atuacao">
+            <h2>Pessoas em Situação de Rua</h2>
+            <img src="{{ url_for('static', filename='home/rua.jpeg') }}" alt="Pessoas em Situação de Rua">
+            <p><br>Levando em consideração os dados que mostram um aumento significativo no número de pessoas em situação de rua, nossa ONG busca atuar de maneira direta e eficiente. Entre as iniciativas realizadas, a distribuição de quentinhas é uma ação contínua e essencial, voltada para combater o problema da fome nas grandes cidades. Além de oferecer uma refeição quente, contribuímos para trazer um pouco de dignidade e acolhimento às pessoas em vulnerabilidade social, promovendo esperança e alívio imediato para quem mais precisa.</p>
+        </div>
+    </div>
+</div>
+
+<div class="espaco"></div>
+
+<div class="parallax-section">
+  <div class="overlay">
+      <h1>PEQUENOS SONHOS, GRANDES SORRISOS</h1>
+      <p>Com cada sorriso de uma criança, plantamos esperança e colhemos um futuro de paz e felicidade.</p>
+  </div>
+</div>
+
+<div class="espaco"></div> <!-- Div espaçadora -->
+
+<!-- Segundo código (Blog e Eventos) -->
+<div class="container-blog-eventos">
+    <!-- Seção Blog -->
+    <div class="card-blog">
+        <h2>BLOG</h2>
+        <div class="card-content">
+            <img src="{{ url_for('static', filename='home/voluntario.png') }}" alt="Quero ser voluntário" class="blog-image">
+            <div class="blog-content">
+                <div class="highlight-box">Quero ser voluntário! E agora?</div>
+                <p><br>Conheça as diversas formas que você pode contribuir como voluntário.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSbFkygA0xkHWt-UnZVVwphG7cEDuKYjD6CcnExR9drtUiOw/viewform" target="_blank" rel="noopener noreferrer" class="btn yellow-btn">Saiba Mais (+)</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Eventos -->
+    <div class="card-eventos">
+        <h2>EVENTOS</h2>
+        <div class="card-content">
+            <img src="{{ url_for('static', filename='home/eventos.png') }}" alt="Casa Geriátrica Divinavó" class="event-image">
+            <div class="event-content">
+                <div class="event-date bordered date-specific">17 agosto // 09h30</div>
+                <h3>Casa Geriátrica Divinavó</h3>
+                <p><br>São Francisco, Niterói</p>
+                <a href="{{ url_for('transparency') }}" class="btn green-btn">Mais Eventos (+)</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- apoiadores -->
+
+<section id="apoiadores-header">
+    <h2>Apoiadores</h2>
+</section>
+<section id="apoiadores">
+    <div class="logos">
+        <img src="{{ url_for('static', filename='home/fwcd3mke.png') }}" alt="Logo OMO">
+        <img src="{{ url_for('static', filename='home/jg1uckn5.png') }}" alt="Logo OMO">
+        <img src="{{ url_for('static', filename='home/wedgapmp.png') }}" alt="Logo OMO">
+        <img src="{{ url_for('static', filename='home/a6x3j766.png') }}" alt="Logo OMO">
+        <img src="{{ url_for('static', filename='home/5ezyp97o.png') }}" alt="Logo OMO">
+    </div>
+</section>
+
+<button class="scroll-up-btn" id="scrollUpBtn">
+  ↑
+</button>
+
+<footer>
+  <div id="footer_content">
+    <div id="footer_contacts">
+      <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='home/LogoAtual.png') }}" id="logo">
+      </a><p>Nossas redes sociais</p>
+
+      <div id="footer_social_media">
+        <a href="https://www.instagram.com/ongsemeandoalegria/" target="_blank" class="footer-link" id="instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.facebook.com/projetosemeandoalegria/?locale=pt_BR" target="_blank" class="footer-link" id="facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="#" class="footer-link" id="whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <ul class="footer-list">
+      <li>
+        <h3>Colabore</h3>
+      </li>
+      <li>
+        <a href="#" class="footer-link">Doe qualquer valor </a>
+      </li>
+      <li>
+        <a href="#" class="footer-link">Apadrinhe nossas crianças</a>
+      </li>
+      <li>
+        <a href="#" class="footer-link">Apadrinhe a ONG</a>
+      </li>
+    </ul>
+
+    <ul class="footer-list">
+      <li>
+        <h3>Contato</h3>
+      </li>
+      <li>
+        <a href="#" class="footer-link">contato@semeandoalegria.org.br</a>
+      </li>
+      <li>
+        <a href="#" class="footer-link">(21)9 XXXX-XXXX</a>
+      </li>
+    </ul>
+
+    <div id="footer_subscribe">
+      <h3>Inscreva-se</h3>
+
+      <p>
+        Digite seu e-mail e fique ligado<br>
+        sobre novas ações!
+      </p>
+
+      <div id="input_group">
+        <input type="email" id="email" placeholder="Digite seu e-mail" required>
+        <button onclick="inscreverEmail()">
+          <i class="fa-regular fa-envelope"></i>
+        </button>
+      </div>
+      
+    </div>
+  </div> 
+
+  <div id="footer_copyright">
+    &#169
+    2024 all rights reserved
+  </div>
+</footer>
+
+  <script src="{{ url_for('static', filename='home/script.js') }}"></script>
+</body>
+
+</html>

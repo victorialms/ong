@@ -1,0 +1,445 @@
+ 
+body {
+    font-family: 'Suez One';
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    line-height: 1.6;
+    max-width: 1920px;
+    margin: 0 auto;
+
+}
+
+/* Header Normal*/
+.custom-header {
+    display: flex;
+    align-items: center;
+    background-color: #ffa600; 
+    padding: 2px 10px;
+    max-width: 1920px;
+    width: 1900px;
+    position: fixed;
+    z-index: 1000;
+    transition: top 0.6s ease-in-out;
+}
+
+.header-logo {
+    width: 100px; 
+    margin-left: 15px;
+}
+
+.header-nav {
+    display: flex;
+    margin-left: 20px;
+    flex-grow: 1; 
+    justify-content: flex-end;
+    gap: 25px;
+    margin-right: 18px;
+}
+
+.nav-link {
+    margin-right: 25px; 
+    color: #ffffff; 
+    text-decoration: none; 
+    font-size: 15px; 
+    transition: background-color 0.2s ease;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    margin-right: 60px;
+}
+
+.header-btn {
+    padding: 9px 25px;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 20px; 
+    background-color: #ffa600; 
+    color: white; 
+    border: 2px solid white;
+    font-family: 'Suez One';
+    text-decoration: none;
+}
+
+.header-btn:hover {
+    background-color: #ee8a0f;
+}
+
+
+/* Container principal de doação */
+.donation-container {
+    background-color: #fff;
+    width: 345px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 52px auto;
+    position: relative;
+    top: 80px;
+    
+}
+
+/* Título do formulário */
+.donation-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Valor da doação */
+.donation-value {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.donation-value label {
+    font-weight: bold;
+    color: #333;
+    top: 15px;
+    position: relative;
+}
+
+.donation-value .amount {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #333;
+    display: inline-block;
+    width: 150px;
+    border: 2px solid #ccc;
+}
+
+/* Método de pagamento */
+.payment-method {
+    margin-bottom: 30px;
+}
+
+.payment-method label {
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+}
+
+.payment-method .payment {
+
+    background-color: #fff;
+    border: 2px solid #007bff;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #007bff;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.payment-method .payment img {
+    width: 140px;
+}
+
+/* Botão de continuar */
+.continue-button {
+    background-color: #807777;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-decoration: none;
+}
+
+.continue-button:hover {
+    background-color: #ff4a4a;
+}
+
+/* Alinhamento da seção de doação */
+.divest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Ajuste para ocupar a maior parte da tela sem altura fixa */
+    padding-bottom: 50px; /* Espaço extra para evitar sobreposição com o footer */
+}
+
+
+
+/* FOOTER */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+    --color-neutral-0: #0e0c0c;
+    --color-neutral-10: #171717;
+    --color-neutral-30: #a8a29e;
+    --color-neutral-40: #f5f5f5;
+
+}
+
+h3 {
+    font-size: 23px;
+}
+
+#logo{
+    max-width: 150px;
+    max-height: 150px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+main {
+    height: 80vh;
+}
+
+footer {
+    width: 100%;
+    color: white;
+    background-color: #FFA600;
+}
+
+.footer-link {
+    text-decoration: none;
+}
+
+#footer_content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 3rem 3.5rem;
+}
+
+#footer_contacts h1 {
+    margin-bottom: 0.75rem;
+}
+
+#footer_social_media {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 43px;
+    width: 43px;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+#footer_contacts,
+.footer-list,
+#footer_subscribe {
+    flex: 1;
+}
+
+#footer_social_media .footer-link i {
+    font-size: 20px;    
+}
+
+#footer_social_media .footer-link:hover {
+    opacity: 0.8;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook {
+    background-color: #4267b3;
+}
+
+#whatsapp {
+    background-color: #25d366;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.footer-list .footer-link {
+    color: rgb(0, 0, 0);
+    transition: all 0.4s;
+    font-size: 17px;
+}
+
+.footer-list .footer-link:hover {
+    color: #000000;
+}
+
+#footer_subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 20px;
+}
+
+#footer_subscribe p {
+    color: black;
+    font-size: 17px;
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 4px;
+}
+
+#input_group input {
+    padding: 0.75rem;
+    width: 100%;
+}
+
+#input_group button {
+    background-color: #cf8802;
+    border: none;
+    color: #000000;
+    padding: 0px 1.25rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#input_group button:hover {
+    opacity: 0.8;
+    background-color: #c78304;
+} 
+
+#footer_copyright {
+    text-align: center;
+    padding: 1rem;
+    background-color: #da8e03;
+    font-size: 0.85rem;
+}
+
+@media screen and (max-width: 768px) {
+    #footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    #footer_content {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 3rem 2rem;
+    }
+}
+
+/* apoiadores */
+
+#apoiadores-header {
+  background-color: #ffb100;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+#apoiadores-header h2 {
+  margin: 0;
+  font-size: 35px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+  display: inline-block;
+  font-family: 'Suez One', serif;
+  font-weight: normal;
+}
+
+#apoiadores {
+  background-color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; /* Mantém os itens na mesma linha */
+  gap: 30px; /* Distância horizontal entre os itens */
+  max-width: 1000px; /* Largura máxima do contêiner */
+  margin: 0 auto; /* Centraliza o contêiner */
+  padding: 0 20px; /* Margem lateral do contêiner */
+}
+
+.logo-item {
+  background-color: #e0f2ff;
+  padding: 10px; /* Ajuste do padding */
+  border-radius: 10px;
+  width: 150px; /* Largura fixa para manter a forma quadrada */
+  height: 150px; /* Altura original para desktop */
+  display: flex; /* Usando flexbox para centralizar a imagem */
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-item img {
+  width: 80%; /* Ajuste do tamanho da imagem dentro do quadrado */
+  height: auto; /* Mantendo a proporção da imagem */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  #apoiadores-header h2 {
+      font-size: 28px; /* Diminuindo o tamanho da fonte para telas menores */
+  }
+
+  #apoiadores {
+      padding: 30px 0; /* Ajuste de padding para telas menores */
+  }
+
+  .logos {
+      justify-content: center; /* Centraliza os logos */
+      flex-wrap: nowrap; /* Mantém os itens na mesma linha */
+  }
+
+  .logo-item {
+      width: 120px; /* Ajuste da largura para telas menores */
+      height: 100px; /* Altura ajustada para telas menores */
+      padding: 8px; /* Ajuste do padding */
+      margin-bottom: 10px; /* Reduzindo a margem inferior para telas menores */
+  }
+
+  .logo-item img {
+      width: 70%; /* Ajuste do tamanho das imagens para telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  #apoiadores-header h2 {
+      font-size: 24px; /* Diminuindo ainda mais o tamanho da fonte */
+  }
+
+  #apoiadores {
+      padding: 20px 0; /* Ajuste adicional para telas menores */
+  }
+}
+
+
+
+
